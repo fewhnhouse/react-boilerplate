@@ -17,7 +17,6 @@ rl.question('Do you really want to clean this Repository and initialize a new on
 });
 
 function clean() {
-    console.log("still here");
     if (!shell.which('git')) {
         shell.echo('Sorry, this script requires git');
         shell.exit(1);

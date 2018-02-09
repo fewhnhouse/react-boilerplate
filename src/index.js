@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-const title = 'My Minimal React Webpack Babel';
+
+import './global-styles';
 
 ReactDOM.render(
   <App/>,
