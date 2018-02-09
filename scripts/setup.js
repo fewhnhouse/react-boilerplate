@@ -8,21 +8,18 @@ if (!shell.which('git')) {
 
 shell.rm('-rf', '.git');
 
+spawn('git', ['init'], (err, stdout, stderr) => {
+    if(err) {
+        console.error(err);
+        return;
+    } 
+    console.log(stdout);
+});
 
-const git = spawn('git', ['init']);
-
-git
-    .stdout
-    .on('data', data => {
-        console.log(`stdout: ${data}`);
-    });
-
-git
-    .stderr
-    .on('data', data => {
-        console.log(`stderr: ${data}`);
-    });
-
-git.on('close', code => {
-    console.log(`Git child exited with code ${code}`);
+commit = spawn('git', ['commit', '-am', '"Initial Commit."'], (err, stdout, stderr) => {
+    if(err) {
+        console.error(err);
+        return;
+    } 
+    console.log(stdout);
 });
