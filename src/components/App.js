@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
+import logo from '../images/react-logo.png';
 
-const Paragraph = styled.p`
+const Paragraph = styled.p `
 color: red;
 font-size: 15px;
 `
@@ -9,7 +10,10 @@ font-size: 15px;
 export default class App extends Component {
     render() {
         return (
-            <Paragraph>React Boilerplate running.</Paragraph>
+            <div>
+                <Paragraph>React Boilerplate running.</Paragraph>
+                <img src={logo}/>
+            </div>
         );
     }
 }
