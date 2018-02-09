@@ -16,7 +16,7 @@ spawn('git', ['init'], (err, stdout, stderr) => {
     console.log(stdout);
 });
 
-commit = spawn('git', ['commit', '-am', '"Initial Commit."'], (err, stdout, stderr) => {
+spawn('git', ['commit', '-am', '"Initial Commit."'], (err, stdout, stderr) => {
     if(err) {
         console.error(err);
         return;
