@@ -8,15 +8,7 @@ if (!shell.which('git')) {
 
 shell.rm('-rf', '.git');
 
-exec('git init', (err, stdout, stderr) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-    console.log(stdout);
-});
-
-exec('git commit -am "Initial Commit."', (err, stdout, stderr) => {
+exec('git init && git add . && git commit -m "Initial Commit."', (err, stdout, stderr) => {
     if (err) {
         console.error(err);
         return;
