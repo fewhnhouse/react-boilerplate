@@ -1,5 +1,5 @@
 const shell = require('shelljs');
-const {spawn} = require('child_process');
+const {exec} = require('child_process');
 
 if (!shell.which('git')) {
     shell.echo('Sorry, this script requires git');
@@ -8,18 +8,18 @@ if (!shell.which('git')) {
 
 shell.rm('-rf', '.git');
 
-spawn('git', ['init'], (err, stdout, stderr) => {
-    if(err) {
+exec('git init', (err, stdout, stderr) => {
+    if (err) {
         console.error(err);
         return;
-    } 
+    }
     console.log(stdout);
 });
 
-spawn('git', ['commit', '-am', '"Initial Commit."'], (err, stdout, stderr) => {
-    if(err) {
+exec('git commit -am "Initial Commit."', (err, stdout, stderr) => {
+    if (err) {
         console.error(err);
         return;
-    } 
+    }
     console.log(stdout);
 });
