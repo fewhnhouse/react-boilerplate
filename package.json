@@ -21,14 +21,15 @@
     "file-loader": "^1.1.9",
     "react-hot-loader": "^3.1.3",
     "uglifyjs-webpack-plugin": "^1.1.8",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.1",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.9",
+    "webpack-dev-server": "^3.1.0",
     "webpack-merge": "^4.1.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --config ./webpack.dev.js",
+    "start": "webpack-dev-server --progress --mode development --config ./webpack.dev.js --open",
     "clean": "node scripts/setup.js",
-    "build": "webpack --config ./webpack.prod.js"
+    "build": "webpack --mode production --config ./webpack.prod.js"
   },
   "dependencies": {
     "cross-env": "^5.1.3",

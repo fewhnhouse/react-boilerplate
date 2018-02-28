@@ -1,9 +1,6 @@
 const path = require('path');
 
 module.exports = {
-    entry: {
-        app: './src/index.js'
-    },
     module: {
         rules: [
             {
@@ -12,21 +9,11 @@ module.exports = {
                 use: ['babel-loader']
             }, {
                 test: /\.(png|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {}
-                    }
-                ]
+                use: ['file-loader']
             }
         ]
     },
     resolve: {
         extensions: ['*', '.js', '.jsx']
-    },
-    output: {
-        path: __dirname + '/dist',
-        publicPath: '/',
-        filename: 'bundle.js'
     }
 };

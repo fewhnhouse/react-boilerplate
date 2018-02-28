@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import logo from '../images/react-logo.png';
 
 const Paragraph = styled.p `
-color: red;
+color: blue;
 font-size: 15px;
 `
 
