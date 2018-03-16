@@ -1,0 +1,12 @@
+# docker-compose.yml
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+      - data:/app
+    ports:
+      - "5000:5000"
+x-docker-remote:
+  project:
+    name: boilerplate-app

@@ -28,6 +28,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --progress --mode development --config ./webpack.dev.js --open",
+    "remote": "webpack-dev-server --host 0.0.0.0 --public fewhnhouse.de:5000 --port 5000 --progress --colors --config ./webpack.dev.js",
     "clean": "node scripts/setup.js",
     "build": "webpack --mode production --config ./webpack.prod.js"
   },
